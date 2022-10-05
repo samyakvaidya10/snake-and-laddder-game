@@ -37,7 +37,10 @@
   }
 }
 
-
+body{
+  margin: 0;
+  padding-top: 50px;
+}
 .grid-container{
   margin: auto;
   height: 400px;
