@@ -6,19 +6,27 @@ export default function Board(){
     const n=5;
 
     
-    const [boardMap,setBoardMap]=React.useState(()=>createBoardMap())
+    const [boardMap,setBoardMap]=React.useState(()=>createBoardMap())      
     const [boardArr,setBoardArr]=React.useState(()=>createBoard())
     const [player,setPlayer]=React.useState(0);
     
     
     function createBoard(){
-        let boardArr=[]
-        for(let i=0;i>n*n;i++){                        
-            boardArr.push("");
+        console.log("in boa")
+        let boardArr1=[]
+        for(let i=0;i<n*n;i++){ 
+            let obj={number:boardMap.get(i),disp:"",isLadder:false,sendTo:null}                       
+            boardArr1.push(obj);
         }
-        return boardArr;
+        console.log(boardArr1)
+        boardArr1[23].isLadder=true;                //Hard coded ladder
+        boardArr1[23].disp="||";                    
+        boardArr1[13].disp="||";
+        boardArr1[18].disp="||";
+        boardArr1[23].sendTo=13;
+        return boardArr1;
     }
-
+    //console.log(boardArr)
     function createBoardMap(){
         const myMap=new Map();
         let c=0;
@@ -44,8 +52,15 @@ export default function Board(){
         let playerIndex=boardMap.get(player);
         setBoardArr(function(prevState){
             let newState=[...prevState];
-            newState[playerIndex]="⦿"
-            newState[boardMap.get(player-1)]="";
+            newState[playerIndex].disp="⦿"
+            if(prevState[playerIndex].isLadder===true){
+                //playerIndex=prevState[playerIndex].sendTo;
+                newState[playerIndex].disp=""
+                setPlayer(prevState[playerIndex].sendTo);
+            }
+            if(player>0){
+                newState[boardMap.get(player-1)].disp=""; 
+            }  
             return newState;
         })
     },[player])
@@ -57,7 +72,10 @@ export default function Board(){
 
     let board=[]
     for(let i=0;i<row;i++){
-            board.push(<div key={i} className="square"><h1>{boardArr[i]}</h1></div>)
+            board.push(<div key={i} className="square">
+                <p className="num-display">{boardArr[i].number}</p>
+                <h2 className="player">{boardArr[i].disp}</h2>
+                </div>)
     }
 
 

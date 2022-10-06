@@ -55,3 +55,19 @@ body{
   width: 100px;
   background-color: #61dafb;
 }
+.num-display{
+  width: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+.player{
+  margin-top: 0;
+}
+.ladder{
+  border: 2px solid red;
+  width: 70px;
+  height: 200px;
+  margin-top: 0px;
+  z-index: -6;
+}
