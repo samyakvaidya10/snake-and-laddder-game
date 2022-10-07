@@ -1,73 +1,33 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 body{
   margin: 0;
   padding-top: 50px;
 }
-.grid-container{
+
+.App{
   margin: auto;
-  height: 400px;
-  width: 400px;
+  height: 520px;
+  width: 520px;
+  border: 2px solid red;
+}
+.grid-container{
+  position: absolute;
   display: grid;
   grid-template-columns:  repeat(5 ,0fr);
   grid-template-rows: repeat(5, 0fr);
   gap: 5px;
+  text-align: center;
 }
 .square{
   height: 100px;
   width: 100px;
-  background-color: #61dafb;
 }
-.num-display{
-  width: 20px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-weight: bold;
+
+.btn{
+  margin-top: auto;
+  position: fixed;
+  height: 5px;
 }
-.player{
-  margin-top: 0;
-}
-.ladder{
-  border: 2px solid red;
-  width: 70px;
-  height: 200px;
-  margin-top: 0px;
-  z-index: -6;
+.brd{
+  position: fixed;
 }

@@ -1,0 +1,11 @@
+
+.player{
+    z-index: 2;
+    color: black;
+}
+#player-square{
+
+}
+.playerText{
+    opacity: 1;
+}

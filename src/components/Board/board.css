@@ -1,0 +1,18 @@
+
+  .board{
+    z-index: 1;
+  }
+  .num-display{
+    padding: 2px;
+    width: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: bold;
+  }
+  .player{
+    margin-top: 0;
+  }
+  #board-square{
+    background-color: #61dafb;
+  }
+ 
